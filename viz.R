@@ -1,6 +1,5 @@
 library(tidyverse)
 library(ggplot2)
-library(forecast)
 
 # WRITING FUNCTIONS
 
