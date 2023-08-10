@@ -39,7 +39,7 @@ close_prices_returns <- close_prices %>%
   mutate_all(.funs = function(x) (x/lag(x) - 1)*100)
 
 # MODELS
-spec <- bekk_spec()
+spec <- bekk_spec(list(type = "bekk", asymmetric = TRUE))
 
 # 1 - EURO, RUBLE, HRYVNIA, BELARUSSIAN RUBLE
 m1 <- bekk_fit(spec, as.ts(close_prices_returns%>%select(close.EUR, close.RUB, close.UAH, close.BYR)%>%drop_na()))
